@@ -1,6 +1,6 @@
 {
   "name": "@macci-impact/max-package-playground",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "scripts": {
     "build": "rm -rf dist && vite build -c src/landing-pages/vite.config.ts",
     "build:lp": "vite build -c src/landing-pages/vite.config.ts",
@@ -59,12 +59,10 @@
       "public"
     ]
   },
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/landing-pages.js",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "default": "./dist/landing-pages.js"
     }
   }
 }
