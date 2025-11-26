@@ -1,0 +1,41 @@
+# WIP - ON-1115/ON-1117
+# recommended IDE: VSCode + Github Actions extension
+
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  pull_request:
+    branches: ["*"]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ vars.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ vars.NODE_VERSION }}
+
+      - name: Authenticate with Google Cloud Workload Identity
+        uses: google-github-actions/auth@v2
+        with:
+          project_id: "orgmgt-cicd"
+          workload_identity_provider: "projects/578309997731/locations/global/workloadIdentityPools/github/providers/github-impactinc"
+
+      - name: Authenticate with GCP and install packages
+        run: |
+          npx google-artifactregistry-auth --repo-config=./.npmrc --credential-config=$HOME/.npmrc
+          npm ci
+
+      - run: npm run build --if-present
+      - run: npm test

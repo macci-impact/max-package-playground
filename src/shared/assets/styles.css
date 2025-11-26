@@ -1,0 +1,50 @@
+@import url(https://ui.impact.com/4.2.1/impactui.css);
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,200,300,500,700");
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+:root {
+  /* Utility variables */
+  /* TODO: All should have a iui source, and we may need more of them - 
+    this may require some translation when moving from on-assets and other repos */
+  --your-project-gap-1: var(--iui-vertical-padding, 8px);
+  --your-project-gap-2: var(--iui-horizontal-padding, 10px);
+  --your-project-gap-3: 20px;
+  --your-project-gap-4: var(--iui-page-gutter, 30px);
+  --your-project-gap-5: 40px;
+  --your-project-gap-6: 60px;
+
+  /* Set local variables from global with hardcoded fallbacks - 
+    Rationale: don't break if global variables not available, but
+    use global variables anytime they are available */
+  --your-project-font-family: var(--iui-font-family-default, sans-serif);
+  --your-project-border-default: var(--iui-border-default, 1px solid #6c7784ff);
+  --your-project-border-radius-default: var(--iui-border-radius-default, 8px);
+  --your-project-font-size-default: var(--iui-font-size-default, 14px);
+  --your-project-color-text-subdued: var(
+    --iui3-color-text-text-subdued,
+    #6c7784ff
+  );
+  --your-project-color-text-critical: var(
+    --iui3-color-critical-text-critical,
+    #c00800ff
+  );
+  --your-project-box-shadow-default: var(
+    --iui-box-shadow-default,
+    0 2px 4px rgba(0, 0, 0, 0.1)
+  );
+  --your-project-box-shadow-light: var(
+    --iui-box-shadow-light,
+    0 2px 4px rgba(0, 0, 0, 0.05)
+  );
+}
+
+/* Reset styles from iui- resets */
+/* TODO: Replace your-project with your team prefix to uniquely identify your components */
+
+.your-project-component {
+  box-sizing: content-box;
+  color: var(--coal-black);
+  font-family: var(--iui-font-family-default);
+  font-size: var(--iui-font-size-default);
+}
