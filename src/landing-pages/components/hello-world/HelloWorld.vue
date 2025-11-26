@@ -6,7 +6,7 @@ defineProps<{ message: string; error?: string | undefined }>();
 
 <template>
   <div class="your-project-component">
-    <Typography v-show="message" variant="h1">Hello World</Typography>
+    <Typography v-show="message" variant="h1">Hello Worlds</Typography>
     <p v-show="error" class="error">
       {{ error }}
     </p>
