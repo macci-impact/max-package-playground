@@ -1,6 +1,6 @@
 {
-  "name": "max-package-playground",
-  "version": "0.0.1",
+  "name": "@macci-impact/max-package-playground",
+  "version": "0.0.2",
   "scripts": {
     "build": "rm -rf dist && vite build -c src/landing-pages/vite.config.ts",
     "build:lp": "vite build -c src/landing-pages/vite.config.ts",
